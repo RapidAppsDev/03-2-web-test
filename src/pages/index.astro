@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout 
+  title="Home"
+  description="Transform your HR leadership with proven executive coaching. 25+ years of experience helping HR Directors drive strategic business impact."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <Hero 
+    title="Executive Coaching for HR Leaders Who Drive Real Business Impact"
+    subtitle="Transform your leadership approach and elevate your strategic influence with personalized coaching grounded in 25+ years of HR expertise."
+    ctaText="Book Free Consultation"
+    ctaLink="#contact"
+    secondaryCtaText="Learn More"
+    secondaryCtaLink="/about"
+  />
+
+  <!-- Services Preview Section -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-gradient mb-4">What I Offer</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Coaching programs designed specifically for HR executives who want to move from operational to strategic leadership.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard 
+          icon="strategy"
+          title="Strategic Leadership"
+          description="Develop your strategic thinking and decision-making to position HR as a key business partner at the executive table."
+        />
+        <ServiceCard 
+          icon="people"
+          title="Executive Presence"
+          description="Build confidence and authority in high-stakes situations. Learn to influence without authority and lead through change."
+        />
+        <ServiceCard 
+          icon="growth"
+          title="Career Advancement"
+          description="Create a clear path to C-suite positions with actionable strategies for visibility, networking, and positioning."
+        />
+        <ServiceCard 
+          icon="target"
+          title="Results-Driven Approach"
+          description="Set measurable goals and track progress. Every coaching engagement focuses on tangible business outcomes."
+        />
+        <ServiceCard 
+          icon="communication"
+          title="Communication Excellence"
+          description="Master executive communication skills including boardroom presentations, stakeholder management, and difficult conversations."
+        />
+        <ServiceCard 
+          icon="leadership"
+          title="Team Development"
+          description="Learn to build and lead high-performing HR teams that deliver strategic value to the organization."
+        />
+      </div>
+
+      <div class="text-center mt-12">
+        <Button href="/services" variant="primary">
+          View All Services
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-padding bg-purple-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-gradient mb-4">What Clients Say</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Real results from HR leaders who have transformed their careers through coaching.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <TestimonialCard 
+          quote="Gordana helped me transition from HR Manager to HR Director in less than a year. Her strategic insights and practical advice were invaluable."
+          author="Ana Marković"
+          role="HR Director"
+          company="Tech Company"
+        />
+        <TestimonialCard 
+          quote="The coaching program gave me the confidence to speak up in executive meetings and position HR as a strategic partner. Game changer!"
+          author="Marko Jovanović"
+          role="VP of People & Culture"
+          company="International Corporation"
+        />
+        <TestimonialCard 
+          quote="Gordana's deep understanding of HR challenges combined with her coaching expertise created the perfect environment for growth."
+          author="Jelena Petrović"
+          role="Chief People Officer"
+          company="Startup Scale-up"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Magnet Section -->
+  <section class="section-padding bg-gradient-to-br from-orange-50 to-purple-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Form -->
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-heading font-bold text-purple-900 mb-4">
+              Free Guide: 5 Questions Every Executive Should Ask Before Hiring an HR Coach
+            </h2>
+            <p class="text-gray-700 mb-6">
+              Make an informed decision about your coaching investment. Download this comprehensive guide now.
+            </p>
+
+            <!-- Mock Form -->
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-700 focus:border-transparent"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-700 focus:border-transparent"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">Company (Optional)</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-700 focus:border-transparent"
+                  placeholder="Your company"
+                />
+              </div>
+              <button type="submit" class="btn-primary w-full">
+                Download Free Guide
+              </button>
+              <p class="text-xs text-gray-500 text-center">
+                * Form functionality will be connected in final build
+              </p>
+            </form>
+          </div>
+
+          <!-- Guide Preview -->
+          <div class="hidden lg:block">
+            <div class="relative">
+              <div class="aspect-[3/4] bg-white rounded-2xl shadow-2xl p-8 border-4 border-purple-700">
+                <div class="space-y-4">
+                  <h3 class="text-2xl font-heading font-bold text-purple-900">5 Essential Questions</h3>
+                  <div class="space-y-3 text-gray-700">
+                    <div class="flex items-start">
+                      <span class="text-orange-500 font-bold mr-2">1.</span>
+                      <p class="text-sm">What's your coaching methodology?</p>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-orange-500 font-bold mr-2">2.</span>
+                      <p class="text-sm">What's your HR background?</p>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-orange-500 font-bold mr-2">3.</span>
+                      <p class="text-sm">How do you measure success?</p>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-orange-500 font-bold mr-2">4.</span>
+                      <p class="text-sm">What's your engagement model?</p>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-orange-500 font-bold mr-2">5.</span>
+                      <p class="text-sm">Can you share client results?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute -top-4 -right-4 w-20 h-20 bg-orange-500 rounded-full opacity-20 blur-2xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section id="contact" class="section-padding bg-purple-900 text-white">
+    <div class="container-custom text-center">
+      <h2 class="mb-6">Ready to Transform Your HR Leadership?</h2>
+      <p class="text-xl text-purple-200 max-w-2xl mx-auto mb-8">
+        Book a free 30-minute consultation to discuss your goals and see if executive coaching is right for you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:office@eaglesmart.rs" class="btn-primary">
+          Email Me
+        </a>
+        <a href="tel:+381660713133" class="btn-secondary !text-white !border-white hover:!bg-white hover:!text-purple-900">
+          Call Now
+        </a>
+      </div>
+      <p class="text-purple-300 mt-6">
+        or connect on <a href="https://www.linkedin.com/in/gordana-panajotovic/" target="_blank" class="underline hover:text-white">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,335 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout 
+  title="Coaching Services"
+  description="Comprehensive executive coaching programs for HR leaders. From strategic leadership to career advancement, find the right program for your goals."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <Hero 
+    title="Coaching Services"
+    subtitle="Tailored coaching programs designed to help HR executives achieve their goals, whether it's advancing to C-suite, building executive presence, or driving strategic change."
+    ctaText="Schedule a Call"
+    ctaLink="#contact"
+    showImage={false}
+  />
+
+  <!-- Main Services Section -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-gradient mb-4">Coaching Programs</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Choose the program that aligns with your current goals and challenges.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Executive Presence Program -->
+        <div class="card border-2 border-purple-700">
+          <div class="flex items-start justify-between mb-4">
+            <h3 class="text-3xl font-heading font-bold text-purple-900">Executive Presence Program</h3>
+            <span class="px-3 py-1 bg-orange-500 text-white text-sm font-semibold rounded-full">Popular</span>
+          </div>
+          <p class="text-gray-700 text-lg mb-6">
+            Build confidence and authority in high-stakes situations. Perfect for HR leaders stepping into more visible executive roles.
+          </p>
+          
+          <div class="space-y-3 mb-6">
+            <h4 class="font-semibold text-purple-900">What's Included:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>6 x 90-minute coaching sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Executive communication skills workshop</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Stakeholder influence mapping</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Email & messaging support between sessions</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4 mb-6">
+            <p class="text-sm text-gray-600">Duration: 3 months | Investment: Contact for pricing</p>
+          </div>
+          
+          <Button href="#contact" variant="primary" class="w-full">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Strategic Leadership Program -->
+        <div class="card">
+          <h3 class="text-3xl font-heading font-bold text-purple-900 mb-4">Strategic Leadership Program</h3>
+          <p class="text-gray-700 text-lg mb-6">
+            Position yourself as a strategic business partner who drives organizational success beyond traditional HR functions.
+          </p>
+          
+          <div class="space-y-3 mb-6">
+            <h4 class="font-semibold text-purple-900">What's Included:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>8 x 90-minute coaching sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Business acumen development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Strategic thinking frameworks</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Ongoing support & accountability</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4 mb-6">
+            <p class="text-sm text-gray-600">Duration: 4 months | Investment: Contact for pricing</p>
+          </div>
+          
+          <Button href="#contact" variant="primary" class="w-full">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Career Advancement Program -->
+        <div class="card">
+          <h3 class="text-3xl font-heading font-bold text-purple-900 mb-4">Career Advancement Program</h3>
+          <p class="text-gray-700 text-lg mb-6">
+            Create a clear path to C-suite positions with actionable strategies for visibility, networking, and positioning.
+          </p>
+          
+          <div class="space-y-3 mb-6">
+            <h4 class="font-semibold text-purple-900">What's Included:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>12 x 90-minute coaching sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Personal brand development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Strategic networking plan</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Interview & negotiation coaching</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4 mb-6">
+            <p class="text-sm text-gray-600">Duration: 6 months | Investment: Contact for pricing</p>
+          </div>
+          
+          <Button href="#contact" variant="primary" class="w-full">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Custom Program -->
+        <div class="card">
+          <h3 class="text-3xl font-heading font-bold text-purple-900 mb-4">Custom Coaching</h3>
+          <p class="text-gray-700 text-lg mb-6">
+            Have specific goals or challenges? Let's design a custom coaching program tailored to your unique situation.
+          </p>
+          
+          <div class="space-y-3 mb-6">
+            <h4 class="font-semibold text-purple-900">What's Included:</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Flexible session count & frequency</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Customized curriculum & exercises</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Focus on your specific goals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">✓</span>
+                <span>Ongoing support & resources</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4 mb-6">
+            <p class="text-sm text-gray-600">Duration: Flexible | Investment: Contact for pricing</p>
+          </div>
+          
+          <Button href="#contact" variant="primary" class="w-full">
+            Learn More
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Process Section -->
+  <section class="section-padding bg-purple-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-gradient mb-12 text-center">The Coaching Process</h2>
+        
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-700 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              1
+            </div>
+            <div>
+              <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Discovery Call</h3>
+              <p class="text-gray-700">
+                We start with a free 30-minute consultation to discuss your goals, challenges, and explore if coaching is the right fit. No pressure, just conversation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-700 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              2
+            </div>
+            <div>
+              <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Goal Setting</h3>
+              <p class="text-gray-700">
+                In our first official session, we define clear, measurable goals and create a roadmap for your coaching journey. What does success look like for you?
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-700 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              3
+            </div>
+            <div>
+              <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Regular Sessions</h3>
+              <p class="text-gray-700">
+                We meet every 2-3 weeks for 60-90 minute sessions. Each session focuses on specific challenges, building new skills, and creating actionable next steps.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-700 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              4
+            </div>
+            <div>
+              <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Between Sessions</h3>
+              <p class="text-gray-700">
+                You have email access for questions, accountability check-ins, and support as you implement what we discussed. Coaching doesn't stop when the session ends.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-700 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              5
+            </div>
+            <div>
+              <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Progress Reviews</h3>
+              <p class="text-gray-700">
+                We regularly review progress against your goals, celebrate wins, and adjust strategy as needed. Flexibility is key to achieving real results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-gradient mb-12 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-6">
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">How long are the coaching sessions?</h3>
+            <p class="text-gray-700">Sessions are typically 60-90 minutes depending on the program and your needs.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">How often do we meet?</h3>
+            <p class="text-gray-700">Most clients find every 2-3 weeks works well, giving time to implement learnings between sessions.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">Do you offer coaching in multiple languages?</h3>
+            <p class="text-gray-700">Yes, I coach in both English and Serbian.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">What if I need support between sessions?</h3>
+            <p class="text-gray-700">All programs include email and messaging access for questions, accountability, and support between scheduled sessions.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">Is coaching confidential?</h3>
+            <p class="text-gray-700">Absolutely. Everything we discuss in our coaching sessions remains completely confidential.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">What makes your coaching different?</h3>
+            <p class="text-gray-700">I bring 25+ years of HR leadership experience, so I understand your challenges firsthand. Plus, every coaching program is results-driven with clear metrics.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xl font-heading font-bold text-purple-900 mb-2">Do you offer group coaching?</h3>
+            <p class="text-gray-700">Currently I focus on individual 1:1 coaching for maximum impact, but I'm open to discussing group programs for teams or organizations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="section-padding bg-gradient-to-br from-orange-500 to-purple-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="mb-6">Ready to Start Your Coaching Journey?</h2>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+        Book a free 30-minute consultation. Let's discuss your goals and find the right coaching program for you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:office@eaglesmart.rs" class="btn-primary !bg-white !text-purple-900 hover:!bg-purple-50">
+          Book Free Consultation
+        </a>
+        <a href="tel:+381660713133" class="btn-secondary !text-white !border-white hover:!bg-white hover:!text-purple-900">
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

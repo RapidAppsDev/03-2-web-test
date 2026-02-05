@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout 
+  title="About"
+  description="Meet Gordana Panajotović - Executive coach with 25+ years of HR expertise, helping leaders transform their strategic impact."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <Hero 
+    title="About Gordana"
+    subtitle="25+ years of HR leadership experience transformed into a proven coaching methodology for executives who want more impact."
+    ctaText="Book a Consultation"
+    ctaLink="#contact"
+    showImage={true}
+  />
+
+  <!-- Story Section -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-gradient mb-8">My Story</h2>
+        
+        <div class="prose prose-lg max-w-none space-y-6 text-gray-700">
+          <p>
+            I've spent over 25 years in HR leadership roles, from managing teams of 5 to leading strategic HR initiatives for organizations with 1,000+ employees. I've sat at the executive table, navigated organizational change, and experienced firsthand the challenges that come with positioning HR as a strategic business partner.
+          </p>
+          
+          <p>
+            Throughout my career, I noticed a pattern: talented HR professionals struggling to make the leap from operational to strategic thinking. They had the skills but lacked the confidence, visibility, or strategic mindset to position themselves at the C-suite level.
+          </p>
+          
+          <p>
+            That's why I became an executive coach. I wanted to help HR leaders accelerate their growth, avoid the mistakes I made, and achieve the impact they're capable of creating.
+          </p>
+          
+          <p>
+            Today, I work with HR Directors, VPs of People & Culture, and aspiring CHROs who want to elevate their leadership, increase their strategic influence, and drive measurable business results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials Section -->
+  <section class="section-padding bg-purple-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-gradient mb-12 text-center">Credentials & Expertise</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Education & Certifications -->
+          <div class="card">
+            <div class="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-4">Education & Certifications</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Certified Executive Coach (ICF Accredited)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Master's Degree in Organizational Psychology</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Leadership Development Certification</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Change Management Professional (Prosci)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience -->
+          <div class="card">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-4">Professional Experience</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>25+ years in HR leadership roles</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Led HR for 1,000+ employee organizations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>International HR experience (CEE, Western Europe)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Executive coach since 2018</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Specializations -->
+          <div class="card">
+            <div class="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-4">Areas of Specialization</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Strategic HR Leadership</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Executive Presence & Communication</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Career Advancement for HR Professionals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Organizational Change Management</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Languages -->
+          <div class="card">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-4">Languages</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span><strong>English</strong> - Fluent (Business level)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span><strong>Serbian</strong> - Native</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Philosophy Section -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-gradient mb-8">My Coaching Philosophy</h2>
+        
+        <div class="space-y-6 text-gray-700">
+          <div class="border-l-4 border-orange-500 pl-6">
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Results-Driven</h3>
+            <p>Every coaching engagement starts with clear, measurable goals. We track progress and adjust strategy based on real business outcomes.</p>
+          </div>
+          
+          <div class="border-l-4 border-purple-700 pl-6">
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Strategic Focus</h3>
+            <p>We don't just work on personal development—we focus on positioning you as a strategic business partner who drives organizational success.</p>
+          </div>
+          
+          <div class="border-l-4 border-orange-500 pl-6">
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Action-Oriented</h3>
+            <p>Theory is important, but action creates change. Every session ends with clear next steps and accountability.</p>
+          </div>
+          
+          <div class="border-l-4 border-purple-700 pl-6">
+            <h3 class="text-2xl font-heading font-bold text-purple-900 mb-2">Confidential & Supportive</h3>
+            <p>This is your safe space to explore challenges, test ideas, and grow without judgment. Everything we discuss remains confidential.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="section-padding bg-gradient-to-br from-purple-900 to-purple-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="mb-6">Let's Work Together</h2>
+      <p class="text-xl text-purple-200 max-w-2xl mx-auto mb-8">
+        Ready to take your HR leadership to the next level? Book a free consultation to explore how coaching can accelerate your career growth.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:office@eaglesmart.rs" class="btn-primary">
+          Book Consultation
+        </a>
+        <Button href="/services" variant="secondary" class="!text-white !border-white hover:!bg-white hover:!text-purple-900">
+          View Services
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
