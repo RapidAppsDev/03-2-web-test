@@ -7,8 +7,22 @@ interface Props {
 
 const { href, variant = 'primary', class: className = '' } = Astro.props;
 const buttonClass = variant === 'primary' ? 'btn-primary' : 'btn-secondary';
+
+// Check if it's a Calendly link
+const isCalendly = href.includes('calendly.com');
+const calendlyUrl = 'https://calendly.com/andrejavelimirovic/30min?hide_event_type_details=1&hide_gdpr_banner=1';
 ---
 
-<a href={href} class={`${buttonClass} ${className}`}>
-  <slot />
-</a>
+{isCalendly ? (
+  <a
+    href=""
+    onclick={`Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;`}
+    class={`${buttonClass} ${className}`}
+  >
+    <slot />
+  </a>
+) : (
+  <a href={href} class={`${buttonClass} ${className}`}>
+    <slot />
+  </a>
+)}

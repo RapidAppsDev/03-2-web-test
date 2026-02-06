@@ -39,8 +39,43 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body class="min-h-screen flex flex-col">
   <slot />
+
+  <!-- Calendly close on overlay click -->
+  <script>
+    // Wait for Calendly to be loaded
+    function initCalendlyOverlayClose() {
+      const observer = new MutationObserver((mutations) => {
+        const overlay = document.querySelector('.calendly-overlay');
+        if (overlay && !overlay.hasAttribute('data-close-listener')) {
+          overlay.setAttribute('data-close-listener', 'true');
+          overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+              if (typeof Calendly !== 'undefined' && Calendly.closePopupWidget) {
+                Calendly.closePopupWidget();
+              }
+            }
+          });
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalendlyOverlayClose);
+    } else {
+      initCalendlyOverlayClose();
+    }
+  </script>
 </body>
 </html>

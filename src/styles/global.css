@@ -56,4 +56,15 @@
     line-height: 1.2;
     padding-bottom: 0.1em;
   }
+
+  /* Scroll offset for anchor links to account for sticky header */
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
+  }
 }

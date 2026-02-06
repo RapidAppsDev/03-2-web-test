@@ -202,7 +202,11 @@ import Button from '../components/Button.astro';
         Ready to take your HR leadership to the next level? Book a free consultation to explore how coaching can accelerate your career growth.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://calendly.com/andrejavelimirovic/30min" class="btn-primary">
+        <a
+          href=""
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/andrejavelimirovic/30min?hide_event_type_details=1&hide_gdpr_banner=1'});return false;"
+          class="btn-primary"
+        >
           Book Consultation
         </a>
         <Button href="/services" variant="secondary" class="!bg-white !text-purple-900 !border-white hover:!bg-purple-100">
