@@ -27,8 +27,8 @@ const navItems = [
             {item.name}
           </a>
         ))}
-        <Button href="#contact" variant="primary" class="ml-4">
-          Book Consultation
+        <Button href="https://calendly.com/andrejavelimirovic/30min" variant="primary" class="ml-4">
+          Book Free Consultation
         </Button>
       </div>
 
@@ -48,15 +48,15 @@ const navItems = [
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
       <div class="flex flex-col space-y-4">
         {navItems.map(item => (
-          <a 
-            href={item.href} 
-            class="text-gray-700 hover:text-purple-700 font-medium transition-colors py-2"
+          <a
+            href={item.href}
+            class="mobile-menu-link text-gray-700 hover:text-purple-700 font-medium transition-colors py-2"
           >
             {item.name}
           </a>
         ))}
-        <Button href="#contact" variant="primary" class="mt-2">
-          Book Consultation
+        <Button href="https://calendly.com/andrejavelimirovic/30min" variant="primary" class="mt-2">
+          Book Free Consultation
         </Button>
       </div>
     </div>
@@ -67,10 +67,27 @@ const navItems = [
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
-    
+    const menuLinks = document.querySelectorAll('.mobile-menu-link');
+
     if (button && menu) {
-      button.addEventListener('click', () => {
+      // Toggle menu on button click
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
         menu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking on a link
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !button.contains(e.target)) {
+          menu.classList.add('hidden');
+        }
       });
     }
   });
