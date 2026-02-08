@@ -109,14 +109,15 @@ import Button from '../components/Button.astro';
   </section>
 
   <!-- Lead Magnet Section -->
-  <section class="section-padding bg-gradient-to-br from-orange-50 to-purple-50">
+  <section id="resources" class="section-padding bg-gradient-to-br from-orange-50 to-purple-50">
     <div class="container-custom">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <!-- Form -->
           <div class="bg-white rounded-2xl shadow-xl p-8">
-            <h2 class="text-3xl font-heading font-bold text-purple-900 mb-4">
-              Free Guide: 5 Questions Every Executive Should Ask Before Hiring an HR Coach
+            <h2 class="text-3xl font-heading font-bold mb-4">
+              <span class="text-orange-500">Free Guide</span><br />
+              <span class="text-purple-900">5 Questions Every Executive Should Ask Before Hiring an HR Coach</span>
             </h2>
             <p class="text-gray-700 mb-6">
               Make an informed decision about your coaching investment. Download this comprehensive guide now.
@@ -151,12 +152,9 @@ import Button from '../components/Button.astro';
                   placeholder="Your company"
                 />
               </div>
-              <button type="submit" class="btn-primary w-full">
+              <a href="/5 Questions & Worksheet for Hiring Your Executive HR Coach by EagleSmart.pdf" download class="btn-primary w-full block text-center">
                 Download Free Guide
-              </button>
-              <p class="text-xs text-gray-500 text-center">
-                * Form functionality will be connected in final build
-              </p>
+              </a>
             </form>
           </div>
 
