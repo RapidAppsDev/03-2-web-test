@@ -7,10 +7,18 @@ const navItems = [
   { name: 'Services', href: '/services' },
   { name: 'Contact', href: '#contact' }
 ];
+
+// Get current pathname to highlight active page
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return currentPath === '/';
+  if (href.startsWith('#')) return false; // Don't highlight anchor links
+  return currentPath.startsWith(href);
+};
 ---
 
 <header class="sticky top-0 z-50 bg-white shadow-sm">
-  <nav class="container-custom py-4">
+  <nav class="container-custom py-4 relative">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="text-2xl font-heading font-bold text-purple-900 hover:text-purple-700 transition-colors">
@@ -20,9 +28,13 @@ const navItems = [
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
         {navItems.map(item => (
-          <a 
-            href={item.href} 
-            class="text-gray-700 hover:text-purple-700 font-medium transition-colors"
+          <a
+            href={item.href}
+            class={`font-medium transition-colors ${
+              isActive(item.href)
+                ? 'text-purple-700'
+                : 'text-gray-700 hover:text-purple-700'
+            }`}
           >
             {item.name}
           </a>
@@ -45,17 +57,21 @@ const navItems = [
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-100 px-6 md:px-8 pb-4 pt-2">
       <div class="flex flex-col space-y-4">
         {navItems.map(item => (
           <a
             href={item.href}
-            class="mobile-menu-link text-gray-700 hover:text-purple-700 font-medium transition-colors py-2"
+            class={`mobile-menu-link font-medium transition-colors py-2 ${
+              isActive(item.href)
+                ? 'text-purple-700'
+                : 'text-gray-700 hover:text-purple-700'
+            }`}
           >
             {item.name}
           </a>
         ))}
-        <Button href="https://calendly.com/andrejavelimirovic/30min" variant="primary" class="mt-2">
+        <Button href="https://calendly.com/andrejavelimirovic/30min" variant="primary" class="mt-2 mobile-menu-link">
           Book Free Consultation
         </Button>
       </div>
@@ -68,6 +84,7 @@ const navItems = [
     const button = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
     const menuLinks = document.querySelectorAll('.mobile-menu-link');
+    const allNavLinks = document.querySelectorAll('nav a[href^="/"]');
 
     if (button && menu) {
       // Toggle menu on button click
@@ -90,6 +107,25 @@ const navItems = [
         }
       });
     }
+
+    // Prevent reload if clicking on current page - just scroll to top
+    allNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        const currentPath = window.location.pathname;
+
+        // Check if clicking on the same page
+        if (href === currentPath || (href === '/' && currentPath === '/')) {
+          e.preventDefault();
+          window.scrollTo(0, 0);
+
+          // Close mobile menu if open
+          if (menu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        }
+      });
+    });
   });
 </script>
 
