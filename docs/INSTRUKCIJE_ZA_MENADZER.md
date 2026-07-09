@@ -1,6 +1,6 @@
-# Setup & Onboarding — Za Menadžera (Tebe)
+# Setup & Onboarding — Za Tebe
 
-Ovo je checklist šta trebalo da daš novom dev-u i gde je šta u sistemu.
+Šta trebalo da daš novom dev-u i šta trebam znati.
 
 ---
 
@@ -8,218 +8,213 @@ Ovo je checklist šta trebalo da daš novom dev-u i gde je šta u sistemu.
 
 ### 1. **Repozitorijum**
 - **URL**: https://github.com/RapidAppsDev/03-WEB-coaching-launchpad
-- **Šta je**: Original repo sa svim setup-om (GitHub + Cloudflare Pages je već konfigurisan)
-- **Zašto**: Sve je već povezano, vidi kako live deployment radi
-- **Alternativa**: Ako želi da vežba bez rizika od slomljenja → koristi test repo (`03-2-web-test`)
+- **Šta je**: Original repo sa Astro website-om
+- **Šta je već setup**: GitHub + Cloudflare Pages (auto-deploy)
+- **Šta radi**: Merge na main → CF automatski builduje i deployuje
 
 ### 2. **Dokumentacija**
-- **ONBOARDING.md** (u `docs/` folder-u)
-  - Detaljnog tok rada
-  - Korak po korak setup
-  - Cloudflare Pages objašnjenje
-  - Primeri izmena
+- **ONBOARDING.md** (u `docs/` folder)
+  - Setup instrukcije
+  - 3 osnovne vežbe
   - Git workflow
   - FAQ
 
-### 3. **Pristup Cloudflare Dashboard-u**
-- **Daj mu**: Pristup kao member na organizaciji `RapidAppsDev`
-- **URL**: https://dash.cloudflare.com/
-- **Put ka projektu**: Workers & Pages → Pages → gordana-coaching-mockup
-- **Šta vidiš tam**:
-  - Build logs (koji commit je deployovan)
-  - Production domain: `https://gordana-coaching-mockup.pages.dev`
-  - Deployment history
-  - **NE daj mu**: Account settings, billing, security keys (to je za tebe)
-
-### 4. **GitHub Access**
+### 3. **GitHub Access**
 - **Org**: RapidAppsDev
 - **Repo**: 03-WEB-coaching-launchpad
-- **Dozvole**: Može da piše kod, pravi branches, PRs
-- **NE**: Merge na main sam (mora code review ili ti odobreš)
+- **Dozvole**: Može pisati kod, praviti branches, PRs
+- **NE**: Merge na main sam (mora PR ili tvoje odobrenje)
+
+### 4. **Live Sajt**
+- **Postojeći**: https://03-web-coaching-launchpad.pages.dev/
+- **Šta se dešava**: Kada push na main → CF builduje + deployuje ~30-60sec
+- **Za vežbanje**: Može da kreira sopstvenu CF Pages ako želi (vidiš Opcija 2 u ONBOARDING.md)
 
 ---
 
-## 🔐 Šta NE Treba da mu Daš
+## ❌ Šta NE Trebalo da Daš
 
-❌ Cloudflare account credentials ili API keys  
-❌ GitHub organization admin access  
-❌ Production secrets ili environment keys (ovde nema, ali za budućnost)  
-❌ Domain management access  
-❌ Billing ili payment info  
+❌ Cloudflare account pristup (tvoj lični nalog)  
+❌ Billing info  
+❌ Domain management  
+❌ Production secrets  
+
+**Zašto:** CF je tvoj personal account sa više projekata. Dev može sam da pravi sopstvenu CF Pages verziju ako želi.
 
 ---
 
-## 📊 Struktura Projekta (Šta Mu Objasni)
+## 🏗️ Struktura Projekta
 
-### Tech Stack
 ```
 Astro 4.3 (Static Site Generator)
     ↓
 Tailwind CSS 3.4 (Styling)
     ↓
-Node.js 18+
+Node.js 18+ (Runtime)
 ```
 
-### Folder Struktura
+**Folder struktura:**
 ```
 src/
-├── pages/       → Stranice (routing automatski)
-├── components/  → Reusable komponente
-├── layouts/     → Layout template
-└── styles/      → Global CSS
+├── pages/       → Stranice (/ /about /services)
+├── components/  → Komponente (Header, Hero, Cards, itd)
+├── layouts/     → Osnovna template
+└── styles/      → Globalni CSS
 
-public/         → Static fajlovi (slike, fonts)
-dist/           → Production build (Ne commituj! Builduje CF)
-```
-
-### Build & Deploy Pipeline
-```
-Local Dev          GitHub         Cloudflare Pages
-  ↓                 ↓                    ↓
-npm run dev    git push main    → npm run build → dist/
-(localhost)        ↓               ↓
-              auto-webhook      auto-upload
-                                → CDN
-                                → https://...pages.dev
+public/         → Static files (slike, fontovi)
+dist/           → Production build (CF kreira automatski)
 ```
 
 ---
 
-## 🎯 Prvi Zadaci za Novog Dev-a
+## 🔄 Build & Deploy Pipeline
 
-**Preporuka:** Daj mu ove po redu da vežba:
+```
+Developer           GitHub         Cloudflare Pages
+    ↓                ↓                    ↓
+npm run dev    git push main        npm run build
+(localhost)        ↓                     ↓
+              webhook trigger      build HTML
+                                      ↓
+                                    deploy CDN
+                                      ↓
+                            https://...pages.dev ✅
+```
 
-### Faza 1: Razumevanje Setup-a (Dan 1)
-- [ ] Kloniraj repo, pokreni `npm install`
-- [ ] Pokreni `npm run dev` i vidim sajt na localhost:4321
-- [ ] Procitaj `README.md` (struktura projekta)
-- [ ] Procitaj `docs/ONBOARDING.md` (ovaj fajl)
-- [ ] Otvori `src/pages/index.astro` i razumej strukturu
+---
+
+## 📋 Prvi Zadaci za Novog Dev-a
+
+**Preporuka - daš mu po redu:**
+
+### Faza 1: Setup (Dan 1)
+- [ ] Kloniraj repo
+- [ ] `npm install` + `npm run dev`
+- [ ] Otvori localhost:4321
+- [ ] Procitaj `README.md` i `docs/ONBOARDING.md`
 
 ### Faza 2: Vežba (Dan 2-3)
-- [ ] **Izmena 1**: Promeni boju nekog dugmeta
-- [ ] **Izmena 2**: Promeni tekst na home page-u
-- [ ] **Izmena 3**: Dodaj novu stranicu (npr. `/test`)
-- [ ] Testiraj sve lokalno (npm run dev)
+- [ ] Vežba 1: Promeni tekst na home page-u
+- [ ] Vežba 2: Promeni boju u tailwind.config.mjs
+- [ ] Vežba 3: Kreiraj novu stranicu (`/test`)
+- [ ] Testiraj sve lokalno
 
-### Faza 3: Deployment (Dan 4)
-- [ ] `npm run build` lokalno
-- [ ] `npm run preview` - pogledaj production verziju
-- [ ] Kreiraj granu: `git checkout -b feature/test-izmena`
-- [ ] Commit izmene: `git add . && git commit -m "Test izmena"`
-- [ ] Push grana: `git push origin feature/test-izmena`
-- [ ] Na GitHub-u kreiraj Pull Request
-- [ ] Vidiš Cloudflare Pages preview URL u PR-u
-- [ ] Testiraj preview deployment
+### Faza 3: Git & Deployment (Dan 4)
+- [ ] Kreiraj granu: `git checkout -b feature/test`
+- [ ] Commit izmene
+- [ ] Push na GitHub: `git push origin feature/test`
+- [ ] Kreiraj Pull Request
+- [ ] (Opciono) Pravi CF Pages deploy ako želi
+- [ ] Testiraj live verziju
 - [ ] Merge PR na main
-- [ ] Čekaj ~30-60 sekundi
-- [ ] Vidiš live na https://gordana-coaching-mockup.pages.dev
 
 ### Faza 4: Real Work
-- Daš mu prvi pravi task (npr. "Dodaj novu sekciju", "Fix bug na Services page")
+- Daš mu prvi pravi task
 
 ---
 
-## 🔧 Cloudflare Pages — Šta je Gde
+## 🚀 Kako Funkcioniše Deployment
 
-### Dashboard URL
-https://dash.cloudflare.com/ → Workers & Pages (left sidebar) → Pages tab
+### Šta se Dešava Kada Pushe na Main
 
-### Projekat: `gordana-coaching-mockup`
+```bash
+git push origin main
+```
 
-**Build Settings** (Deployments tab)
-- **Repository**: `RapidAppsDev/03-WEB-coaching-launchpad`
-- **Branch**: `main`
-- **Build command**: `npm run build`
-- **Build output directory**: `dist`
-- **Root directory**: `/` (ne menjaj)
-- **Environment**: Nema env vars (statički site)
+1. GitHub prijavi Cloudflare Pages (webhook)
+2. CF pokreće: `npm run build`
+3. Astro kreira `dist/` folder sa HTML fajlovima
+4. CF hostvuje `dist/` na CDN
+5. ~30-60 sekundi kasnije → https://03-web-coaching-launchpad.pages.dev je updatovan
 
-**Domains** (Settings tab)
-- **Production domain**: `gordana-coaching-mockup.pages.dev`
-- **Custom domains**: Ako kupimo domain, ide ovde
-
-**Deployment History** (Deployments tab)
-- Vidiš sve pushove
-- Click na deployment → vidiš build log
-- Ako je failed → vidiš šta je error
-
-**Preview Deployments**
-- Automatski se kreiraju za svaki PR
-- Link se pojavljuje u PR-u na GitHub-u
-- Testiraj pre nego merge-uješ
+**Ako build fail-uje:**
+- CF ima build logs (nije dostupno dev-u bez pristupa, ali vidim ja)
+- Česta greška: dependency problem, syntax error, missing file
 
 ---
 
-## ⚠️ Česte Greške da Izbegneš
+## 🔧 GitHub PR Workflow
 
-### Greška 1: Pushujem bez testiranja
-❌ `git push origin main` bez `npm run dev` i `npm run build` proveravanja  
-✅ Uvek: `npm run dev` → testiraj → `npm run build` → `npm run preview` → push
+**Kada dev kreirajira PR (pre merge-a na main):**
 
-### Greška 2: Menjam production bez PR
-❌ `git push origin main` direktno (bez PR)  
-✅ Kreiraj branch → PR → test sa preview → merge
+```
+1. Novi code na feature branch
+2. Push na GitHub
+3. Cloudflare Pages kreira PREVIEW deployment
+4. PR sadrži link: https://[random].pages.dev
+5. Dev testiira preview
+6. Ako je OK → merge na main → production update
+```
+
+---
+
+## ⚠️ Česte Greške
+
+### Greška 1: Push bez testiranja
+❌ Direktno `git push origin main` bez `npm run dev`  
+✅ Uvek: test lokalno → build lokalno → push
+
+### Greška 2: Slomljen build
+❌ Pushem kod sa greškama  
+✅ `npm run build` lokalno prvo → ako pase → push
 
 ### Greška 3: Commitovanje `dist/` foldera
 ❌ `git add dist/` (CF će sam buildovati)  
-✅ `.gitignore` već ima `dist/`, onda je OK
+✅ `.gitignore` već ima `dist/`
 
-### Greška 4: Break-ovanje deployment-a sa syntax errorom
-❌ Pushem kod sa greskom → CF build fail-uje  
-✅ `npm run build` lokalno prvo da vidim greške
-
----
-
-## 📞 Support & Escalation
-
-Ako novom dev-u trebam pomoć:
-
-| Problem | Rešenje |
-|---------|---------|
-| Astro syntax je čudan | Pošalji link: https://docs.astro.build/ |
-| Tailwind klasa ne radi | Verifu u tailwind.config.mjs (možda klasa nije definisana) |
-| Deployment je failed | Pogled build logs u CF Dashboard → Deployments |
-| GitHub PR nije merjable | Proveri: code conflicts? CI status? Branch protection rules? |
-| Boja nije dobra | Verifu u tailwind.config.mjs ili koristim Tailwind color palette |
+### Greška 4: Promenjen važan fajl
+❌ Slučajno izmeni astro.config.mjs ili tailwind.config.mjs  
+✅ Review pre commit-a
 
 ---
 
-## 📋 Checklist — Kada ga Puštaš Slobodno
+## 📞 Ako dev-u Trebam Help
 
-Pre nego što mu daš pristup i zadatke:
-
-- [ ] Ima GitHub pristup sa write dozvoli
-- [ ] Ima Cloudflare Page view-only pristup (NE admin)
-- [ ] Procitao je ONBOARDING.md i razume build pipeline
-- [ ] Lokalno je uspešno pokrenuo `npm run dev`
-- [ ] Napravio je test PR i vidim preview deployment
-- [ ] Razume file-based routing u Astro
-- [ ] Zna kako da čita build errors
+| Problem | Šta Mu Kažem |
+|---------|-------------|
+| Astro sintaksa čudna | "Pročitaj https://docs.astro.build/" |
+| Tailwind klasa ne radi | "Proveri tailwind.config.mjs - možda klasa nije definisana" |
+| Build local fail-uje | "Verifu `npm run build` - šta je error?" |
+| PR preview ne radi | "Čekaj ~5 min, CF builduje. Vidiš li status u PR-u?" |
+| Git conflict | "Rebase feature granu na main: `git rebase origin/main`" |
 
 ---
 
-## 🎓 Edukativni Resursi za Njega
-
-Daj mu ove linkove:
+## 🎓 Resursi za Dev-a
 
 - **Astro**: https://docs.astro.build/
-- **Tailwind CSS**: https://tailwindcss.com/docs/
-- **Cloudflare Pages**: https://developers.cloudflare.com/pages/
-- **Git workflow**: https://git-scm.com/book/en/v2
+- **Tailwind**: https://tailwindcss.com/docs/
+- **Git**: https://git-scm.com/book/en/v2
 
 ---
 
-## 🚀 Long-term Plan
+## 📊 Cloudflare Pages — Ako Dev Želi Sopstveni Deploy
 
-**Kada želi da ide dalje:**
+Dev može sam da pravi test verziju (vidiš "Opcija 2" u ONBOARDING.md):
 
-1. Dodaj Real Contact Form (Formspree ili EmailJS)
-2. Add Blog (Sanity CMS + Astro integration)
-3. Analytics (Google Analytics ili CF Web Analytics)
-4. Custom Domain (domain → DNS setup u CF)
-5. Deploj na sopstveni domain
+1. Kreira fork ili koristi testnu granu
+2. Odeđe na https://dash.cloudflare.com (besplatno)
+3. Kreiraj Pages projekt
+4. Poveži GitHub repo
+5. Build settings:
+   - `npm run build`
+   - `dist`
+6. Deploy ✅
 
 ---
 
-**Gotovo!** Novi dev je spreman za rad. 🎉
+## 🎯 Checklist — Kada Ga Puštaš Slobodno
+
+Pre nego što ga puštaš na pravi rad:
+
+- [ ] Ima GitHub pristup (write permissions)
+- [ ] Lokalno je uspešno pokrenuo `npm run dev`
+- [ ] Procitao je ONBOARDING.md
+- [ ] Uradio je sve 3 vežbe
+- [ ] Napravio je test PR i vidiš preview deployment
+- [ ] Razume file-based routing u Astro
+- [ ] Zna `npm run dev`, `npm run build`, `git` komande
+
+---
+
+**Gotovo!** Dev je spreman. 🎉
