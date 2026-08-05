@@ -1,6 +1,6 @@
 # Onboarding — Getting Started
 
-Zdravo! Dobrodošao na projekat. Evo kako da počneš.
+Dobrodošao na projekat. Evo kako da počneš.
 
 ---
 
