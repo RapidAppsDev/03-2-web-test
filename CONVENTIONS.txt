@@ -1,0 +1,8 @@
+Zajednicka pravila: DEV-CONVENTIONS.md u 00-Shared-Resources
+(C:/RA/00-Shared-Resources/dev/DEV-CONVENTIONS.md). Ako nemas pristup tom
+direktorijumu (spoljni dev), pitaj vlasnika ili se drzi samo pravila ispod.
+Ovde samo pravila ovog repoa.
+
+## Repo-specificna pravila
+
+Nema posebnih repo-specificnih pravila zavedenih van CLAUDE.md u ovom trenutku.
